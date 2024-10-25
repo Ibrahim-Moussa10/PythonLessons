@@ -19,6 +19,7 @@ class LinkedList:
             n=Node(val,self.head)
             self.head=n
             self.size+=1
+
     def addToTail(self,val):
         if self.size==0:
             n=Node(val,None)
@@ -30,6 +31,7 @@ class LinkedList:
             self.tail.next=n
             self.tail=n
             self.size+=1
+
     def deleteHead(self):
         if self.size==0:
             return None
@@ -43,6 +45,7 @@ class LinkedList:
             self.head=self.head.next
             self.size-=1
             return val
+        
     def deleteTail(self):
         if self.size<=1:
             return self.deleteHead()
@@ -55,6 +58,15 @@ class LinkedList:
             self.tail.next=None
             self.size-=1
             return val
+        
+    def search(self,target):
+        current = self.head
+        while current != None:
+            if current.info== target:
+                return current
+            current = current.next
+        return None
+
     def printLL(self):
         temp=self.head
         while temp!=None:
@@ -69,12 +81,26 @@ ll.addToHead(24)
 ll.printLL()
 ll.addToTail(5)
 ll.printLL()
-
+ll.addToTail(8)
+ll.printLL()
+ll.addToTail(9)
+ll.printLL()
+ll.addToTail(16)
+ll.printLL()
+ll.addToTail(7)
+ll.printLL()
+ll.addToTail(5)
+ll.printLL()
 
 ll.deleteTail()
 ll.printLL()
 ll.deleteHead()
-ll.printLL()
-ll.deleteHead()
-ll.printLL()
-print("*")
+
+result = ll.search(16)
+if result:
+    print(f"Found: {result.info}")
+
+else:
+    print("Not Found")
+
+
