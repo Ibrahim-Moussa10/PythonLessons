@@ -69,5 +69,12 @@ ll.addToHead(24)
 ll.printLL()
 ll.addToTail(5)
 ll.printLL()
-ll.addToTail(9)
+
+
+ll.deleteTail()
 ll.printLL()
+ll.deleteHead()
+ll.printLL()
+ll.deleteHead()
+ll.printLL()
+print("*")
