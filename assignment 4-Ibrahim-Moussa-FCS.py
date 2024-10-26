@@ -1,5 +1,5 @@
 
-given=input()
+given=input("enter ur word: ")
 word = []
 
 word.append(given)
